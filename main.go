@@ -36,7 +36,7 @@ func main() {
 	app.NewRouter(server, categoryController)
 
 	// Start Server
-	log.Println("Server running on port 8080")
-	err = server.Listen(":8080")
+	log.Println("Server running on port 8081")
+	err = server.Listen(":8081")
 	helper.PanicIfError(err)
 }
