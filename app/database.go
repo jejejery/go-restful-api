@@ -1,7 +1,7 @@
 package app
 
 import (
-	"gorm.io/driver/mysql"
+	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"log"
@@ -10,9 +10,12 @@ import (
 
 // NewDB initializes the database connection using GORM
 func NewDB() *gorm.DB {
-	dsn := "root:Jery201cupu*@tcp(localhost:3306)/posdb?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
-		Logger: logger.Default.LogMode(logger.Info), // Logging SQL queries
+	// mysql configuration
+	// dsn := "root:Jery201cupu*@tcp(localhost:3306)/posdb?charset=utf8mb4&parseTime=True&loc=Local"
+	// postgres configuration
+	dsn := "host=postgres_service user=postgres password=Jery201cupu* dbname=posdb port=5434 sslmode=disable TimeZone=Asia/Jakarta"
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
+		Logger: logger.Default.LogMode(logger.Info),
 	})
 	if err != nil {
 		log.Fatalf("Failed to connect to database: %v", err)

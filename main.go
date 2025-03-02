@@ -21,7 +21,10 @@ func main() {
 	db := app.NewDB()
 
 	// Run Auto Migration (Opsional, bisa dihapus jika tidak diperlukan)
-	err := db.AutoMigrate(&domain.Category{})
+	err := db.AutoMigrate(&domain.Category{},
+						&domain.Product{},
+						&domain.Customer{},
+						&domain.Employee{})	
 	helper.PanicIfError(err)
 
 	// Initialize Validator
@@ -40,3 +43,6 @@ func main() {
 	err = server.Listen(":8081")
 	helper.PanicIfError(err)
 }
+
+
+

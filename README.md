@@ -9,7 +9,7 @@ API berbasis Golang untuk mengelola produk menggunakan **Fiber**, **GORM**, dan 
 - [Golang](https://golang.org/)
 - [Fiber](https://gofiber.io/)
 - [GORM](https://gorm.io/)
-- [MySQL](https://www.mysql.com/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ---
 
@@ -18,7 +18,7 @@ API berbasis Golang untuk mengelola produk menggunakan **Fiber**, **GORM**, dan 
 
 go get -u github.com/gofiber/fiber/v2
 go get -u gorm.io/gorm
-go get -u gorm.io/driver/mysql
+go get -u gorm.io/driver/postgres
 ```
 
 ## 🚀Update Dependency
@@ -120,8 +120,9 @@ POST /products/
 
 ---
 
-## ✨ Kontributor
-- **Ahmad Roni Purwanto** - Full Stack Developer
+## ✨ Credits
+- Thanks to Mr. **Ahmad Roni Purwanto** - Full Stack Developer
+- [Boilerplate for this repository](https://github.com/aronipurwanto/go-restful-api-test)
 
 ---
 

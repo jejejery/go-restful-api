@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  go-restful-api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: go-restful-api
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres_service
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5434
+  postgres_service:
+    image: postgres:latest
+    container_name: postgres_service
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5434:5434"
